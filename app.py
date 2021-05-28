@@ -1,5 +1,6 @@
 import math as m
 import time as t
+import sys
 from players import ComputerPlayer,HumanPlayer
 class TicTacToe(object):
     def __init__(self):
@@ -57,10 +58,11 @@ def play(game_instance,x_player,o_player,start_from='x',speed=0.8):
 
             if game_instance.current_winner:
                 print(f'{player_letter} has won the game, hurray!')
-                return
+                sys.exit(0)
         player_letter = 'o' if player_letter == 'x' else 'x'
         t.sleep(speed)
     print('its a draw')
+    sys.exit(0)
 
 
 if __name__ == '__main__':
